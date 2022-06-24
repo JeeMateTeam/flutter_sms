@@ -14,7 +14,7 @@ I wanted to maintain this flutter library since I was building my own sms applic
 
 This is an SMS library for Flutter.
 
-**It only supports Android for now.** iOS and MMS is not in the scope of this project.
+It only support Android. iOS and MMS is not in the scope of this project nor will it ever be.
 
 ## Extra
 
