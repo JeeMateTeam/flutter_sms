@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:sms_maintained/contact.dart';
 import 'package:sms_maintained/sms.dart';
 
@@ -27,13 +26,16 @@ class Thread extends StatelessWidget {
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
       ),
-      trailing: new Badge(thread.messages),
+      trailing: SizedBox(
+        width: 10,
+        child: new Badge(thread.messages),
+      ),
       onTap: () => _showConversation(context),
     );
   }
 
   void _showConversation(BuildContext context) {
-    Navigator.of(context).push(new MaterialPageRoute(
-        builder: (context) => new Conversation(thread, userProfile)));
+    Navigator.of(context)
+        .push(new MaterialPageRoute(builder: (context) => new Conversation(thread, userProfile)));
   }
 }

@@ -10,8 +10,7 @@ class ConversationStore extends InheritedWidget {
   final SmsThread thread;
 
   static ConversationStore of(BuildContext context) {
-    return context.inheritFromWidgetOfExactType(ConversationStore)
-        as ConversationStore;
+    return context.dependOnInheritedWidgetOfExactType<ConversationStore>();
   }
 
   @override

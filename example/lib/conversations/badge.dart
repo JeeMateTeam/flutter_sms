@@ -15,16 +15,13 @@ class Badge extends StatelessWidget {
 
     return new Container(
       padding: const EdgeInsets.all(8.0),
-      decoration:
-          new ShapeDecoration(shape: new CircleBorder(), color: Colors.red),
-      child: new Text(_countUnreadMessages().toString(),
-          style: new TextStyle(color: Colors.white)),
+      width: 10,
+      decoration: new ShapeDecoration(shape: new CircleBorder(), color: Colors.red),
+      child: new Text(_countUnreadMessages().toString(), style: new TextStyle(color: Colors.white)),
     );
   }
 
   int _countUnreadMessages() {
-    return messages
-        .where((msg) => msg.kind == SmsMessageKind.Received && !msg.isRead)
-        .length;
+    return messages.where((msg) => msg.kind == SmsMessageKind.Received && !msg.isRead).length;
   }
 }
