@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:sms_maintained/contact.dart';
 import 'package:sms_maintained/sms.dart';
@@ -95,6 +94,6 @@ class FormSend extends StatelessWidget {
     Contact contact = await contacts.queryContact(message.address);
     final snackBar = new SnackBar(
         content: new Text('Message to ${contact.fullName} delivered'));
-    Scaffold.of(context).showSnackBar(snackBar);
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }
