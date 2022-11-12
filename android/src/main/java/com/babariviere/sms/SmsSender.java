@@ -83,7 +83,7 @@ class SmsSenderMethodHandler implements RequestPermissionsResultListener {
                 registrar.context(),
                 0,
                 sentIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT
+                PendingIntent.FLAG_IMMUTABLE
         );
 
         Intent deliveredIntent = new Intent("SMS_DELIVERED");
@@ -92,7 +92,7 @@ class SmsSenderMethodHandler implements RequestPermissionsResultListener {
                 registrar.context(),
                 UUID.randomUUID().hashCode(),
                 deliveredIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT
+                PendingIntent.FLAG_IMMUTABLE
         );
         SmsManager sms;
         if (this.subId == null) {
